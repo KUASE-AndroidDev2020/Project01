@@ -8,21 +8,21 @@
 
     <EditText
         android:id="@+id/editText2"
-        android:layout_width="149dp"
-        android:layout_height="26dp"
+        android:layout_width="160dp"
+        android:layout_height="57dp"
         android:ems="10"
         android:inputType="date"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.797"
+        app:layout_constraintHorizontal_bias="0.806"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.154" />
+        app:layout_constraintVertical_bias="0.143" />
 
     <EditText
         android:id="@+id/editText3"
-        android:layout_width="141dp"
-        android:layout_height="34dp"
+        android:layout_width="134dp"
+        android:layout_height="59dp"
         android:ems="10"
         android:inputType="time"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -43,7 +43,7 @@
         app:layout_constraintHorizontal_bias="0.055"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.047" />
+        app:layout_constraintVertical_bias="0.046" />
 
     <EditText
         android:id="@+id/editText4"
