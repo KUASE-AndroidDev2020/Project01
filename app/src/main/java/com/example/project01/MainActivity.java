@@ -7,8 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -17,43 +21,24 @@ public class MainActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ArrayList data = new ArrayList<>();
-        data.add("1");
-        data.add("2");
-        data.add("3");
-        data.add("4");
-        data.add("5");
-        data.add("6");
-        data.add("7");
-        data.add("8");
-        data.add("9");
-        data.add("10");
-        data.add("11");
-        data.add("12");
-        data.add("13");
-        data.add("14");
-        data.add("15");
-        data.add("16");
-        data.add("17");
-        data.add("18");
-        data.add("19");
-        data.add("20");
-        data.add("21");
-        data.add("22");
-        data.add("23");
-        data.add("24");
-        data.add("25");
-        data.add("26");
-        data.add("27");
-        data.add("28");
-        data.add("29");
-        data.add("30");
-        data.add("31");
 
-        ArrayAdapter adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, data);
+        String[] subjects = {"7/1 12:40","7/2","7/3","7/4 16:00","7/5","7/6","7/7","7/8","7/9","7/10","7/11","7/12","7/13","7/14","7/15","7/16 17:30","7/17","7/18","7/19","7/20","7/21","7/22","7/23","7/24","7/25","7/26","7/27","7/28 13:00","7/29","7/30","7/31"};
+        String[] comments = {"英会話Ⅰ","","","誕生日会","","","","","","","","","","","","眼科","","","","","","","","","","","","カラオケ","","",""};
 
-        ListView listView = (ListView)findViewById(R.id.Days);
-        listView.setAdapter(adapter);
+        List<Map<String, String>> data = new ArrayList<Map<String, String>>();
+        for (int i=0; i<subjects.length; i++){
+            Map<String, String> item = new HashMap<String, String>();
+            item.put("Subject", subjects[i]);
+            item.put("Comment", comments[i]);
+            data.add(item);
+
+            SimpleAdapter adapter = new SimpleAdapter(this, data,
+                    android.R.layout.simple_list_item_2,
+                    new String[] { "Subject", "Comment" },
+                    new int[] { android.R.id.text1, android.R.id.text2});
+            ListView listView = (ListView)findViewById(R.id.Days);
+            listView.setAdapter(adapter);
+        }
     }
     public void goToAddPlanActivity(View view) {
         Intent toAdd = new Intent(this, AddPlanActivity.class);

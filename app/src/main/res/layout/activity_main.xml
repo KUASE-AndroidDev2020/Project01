@@ -39,7 +39,8 @@
     <ListView
         android:id="@+id/Days"
         android:layout_width="412dp"
-        android:layout_height="253dp"
+        android:layout_height="294dp"
+        android:divider="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
